@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Loan Calculator</title>
+</head>
+<body>
+  
+  <div class="container">
+    <h2>Loan Installment Calculator</h2>
+
+    <div id="loanSrc">
+      
+      <form class="loanForm" name="loanForm">
+        <table>
+          <tr>
+            <td>Loan Amount:</td>
+            <td><input id="loanAmt" type="text" name="loanAmt" size="10"></td>
+          </tr>
+          <tr>
+            <td>Number of Months:</td>
+            <td><input id="months" type="text" name="months" size="10"></td>
+          </tr>
+          <tr>
+            <td>Annual Interest Rate:<br/><span>(ex. 4.5% = 4.5)</span></td>
+            <td><input id="rate" type="text" name="rate" size="10"></td>
+          </tr>
+          <tr>
+            <td>Extra Monthly Payment:</td>
+            <td><input id="extra" type="text" name="extra" size="10"></td>
+          </tr>
+          <tr>
+            <td><input class="loanFormBtn" type="button" onclick="validate()" value="Calculate"></td>
+            <td><input class="loanFormBtn" type="button" onclick="startOver()" value="Start Over"></td>
+          </tr>
+        </table>
+      </form>
+
+    </div><!-- loan form -->
+
+    <div id="loanInfo">
+
+    </div><!--loan info-->
+
+    <div id="tableHeader">
+
+    </div>
+
+    <div id="table">
+
+    </div>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
