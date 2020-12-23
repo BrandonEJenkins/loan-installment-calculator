@@ -48,9 +48,23 @@ function validate() {
   else if (extra < 0 || isNaN(Number(extra)) ) {
     alert('Please enter a valid extra payment');
     document.loanForm.extra.value = '0';
-  } 
-  else {
-    alert('Validation complete');
-    calculate();
+  } else {
+
+    // use parseFloat to convert string to number: if loanAmt = '100' (string) --> parseFloat(loanAmt) = 100 (number)
+    calculate(parseFloat(loanAmt), parseInt(months), parseFloat(rate), parseFloat(extra));
   }
 };
+
+function calculate(loanAmt, months, rate, extra) {
+  i = rate/100; //change % to decimal
+
+  var monthlyPayment = loanAmt*(i/12)*Math.pow((1+i/12),months) / (Math.pow((1+i/12),months)-1);
+
+  // alert(round(monthlyPayment, 2));
+
+  document.getElementById('loan-info').innerHTML = info; //info is a string containing all the html table code
+}
+
+function round(num, dec) {
+  return (Math.round(num*Math.pow(10,dec))/Math.pow(10,dec)).toFixed(dec);
+}
