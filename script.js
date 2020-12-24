@@ -60,6 +60,29 @@ function calculate(loanAmt, months, rate, extra) {
 
   var monthlyPayment = loanAmt*(i/12)*Math.pow((1+i/12),months) / (Math.pow((1+i/12),months)-1);
 
+  var info = "";
+
+  info += "<table width='250'>";
+  info += "<tr><td>Loan Amount:</td>";
+  info += "<td align='right'>$" + loanAmt + "</td></tr>";
+
+  info += "<tr><td>Num of Months:</td>";
+  info += "<td align='right'>" + months + "</td></tr>";
+
+  info += "<tr><td>Interest Rate:</td>";
+  info += "<td align='right'>" + rate + "%</td></tr>";
+  
+  info += "<tr><td>Monthly Payment:</td>";
+  info += "<td align='right'>$" + round(monthlyPayment, 2) + "</td></tr>";
+
+  info += "<tr><td>+Extra:</td>";
+  info += "<td align='right'>$" + extra + "</td></tr>";
+
+  info += "<tr><td>Total Payment:</td>";
+  info += "<td align='right'>$" + round(monthlyPayment + extra, 2) + "</td></tr>";
+
+  info += "</table>";
+
   // alert(round(monthlyPayment, 2));
 
   document.getElementById('loan-info').innerHTML = info; //info is a string containing all the html table code
