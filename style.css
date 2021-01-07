@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
+:root {
+  --primary-background-color: rebeccapurple;
+  --secondary-background-color: rgb(60, 36, 83);
+  --body-text-color: #fff;
+}
+
 body {
+  background-color: var(--primary-background-color);
   font-family: 'Roboto Mono';
+  color: var(--body-text-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,13 +19,14 @@ body {
 }
 
 .container {
+  background-color: var(--secondary-background-color);
+  /* background-color: #F9F9F9; */
   text-align: left;
   /* width: 650px; */
   width: 65%;
   /* height: 600px; */
   margin: 0px auto;
   padding: 10px;
-  background-color: #F9F9F9;
   border-radius: 5px;
   border: none;
 }
