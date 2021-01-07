@@ -4,6 +4,7 @@
   --primary-background-color: rebeccapurple;
   --secondary-background-color: rgb(60, 36, 83);
   --body-text-color: #fff;
+  --button-color: slateblue;
 }
 
 body {
@@ -29,6 +30,13 @@ body {
   padding: 10px;
   border-radius: 5px;
   border: none;
+}
+
+h2 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #loan-src {
@@ -90,15 +98,17 @@ body {
 }
 
 .loan-form-btn {
-  background-color: lightskyblue;
+  background-color: var(--button-color);
+  color: var(--body-text-color);
   cursor: pointer;
   border: 0;
+  border-radius: 3px;
   padding: 10px;
 }
 
 .loan-form-btn:active {
   transform: scale(0.98);
-  background-color: lightblue;
+  background-color: var(--button-color);
 }
 
 .loan-form-btn:focus {
