@@ -86,6 +86,31 @@ function calculate(loanAmt, months, rate, extra) {
   // alert(round(monthlyPayment, 2));
 
   document.getElementById('loan-info').innerHTML = info; //info is a string containing all the html table code
+
+  // calculate figures for table
+  var table = '';
+
+  table += "<table cellpadding='15' border='1'>";
+  table += "<tr>";
+    table += "<td width='30'>0</td>";
+    table += "<td width='60'>&nbsp;</td>";
+    table += "<td width='60'>&nbsp;</td>";
+    table += "<td width='60'>&nbsp;</td>";
+    table += "<td width='85'>&nbsp;</td>";
+    table += "<td width='70'>" + round(loanAmt,2) + "</td>"; // round loan amount to 2 decimals
+  table += "</tr>";
+
+  var currentBalance = loanAmt;
+  var paymentCounter = 1;
+  var totalInterest = 0;
+
+  while(currentBalance > 0) {
+    //create rows
+  }
+
+    table += "</table>";
+
+    document.getElementById('table').innerHTML = table;
 }
 
 function round(num, dec) {
