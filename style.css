@@ -29,7 +29,7 @@ body {
   margin-bottom: 10px;
   border-radius: 3px;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 #loan-info {
@@ -39,20 +39,22 @@ body {
   margin-bottom: 10px;
   border-radius: 3px;
 
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 }
 
 #table-header {
-  /* display: flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; */
-  clear: both;
+  justify-content: center;
+  /* clear: both; */
   width:100%;
+  /* width: 600px; */
   /* height: 50px; */
+  max-height: 100%;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 #table-header td {
@@ -62,13 +64,14 @@ body {
 #table {
   overflow: auto;
   width: 100%;
+  /* width: 600px; */
   height: 200px;
   border: 1px solid grey;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  /* display: flex;
+  /* display: flex; */
   align-items: center;
-  justify-content: center; */
+  /* justify-content: center; */
   font-family: sans-serif;
   font-size: 13px;
 }

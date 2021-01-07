@@ -92,21 +92,49 @@ function calculate(loanAmt, months, rate, extra) {
 
   table += "<table cellpadding='15' border='1'>";
   table += "<tr>";
-    table += "<td width='30'>0</td>";
-    table += "<td width='60'>&nbsp;</td>";
-    table += "<td width='60'>&nbsp;</td>";
+    table += "<td width='60'>0</td>";
+    table += "<td width='80'>&nbsp;</td>";
+    table += "<td width='80'>&nbsp;</td>";
     table += "<td width='60'>&nbsp;</td>";
     table += "<td width='85'>&nbsp;</td>";
-    table += "<td width='70'>" + round(loanAmt,2) + "</td>"; // round loan amount to 2 decimals
+    table += "<td width='90'>" + round(loanAmt,2) + "</td>"; // round loan amount to 2 decimals
   table += "</tr>";
 
   var currentBalance = loanAmt;
   var paymentCounter = 1;
   var totalInterest = 0;
 
+  monthlyPayment = monthlyPayment + extra;
+
   while(currentBalance > 0) {
-    //create rows
+    // create rows
+    towardsInterest = (i/12) * currentBalance; // calculates portion of monthly pmt that goes toward interest
+    
+    if(monthlyPayment > currentBalance) {
+      monthlyPayment = currentBalance + towardsInterest;
+    }
+
+    towardsBalance = monthlyPayment - towardsInterest;
+    totalInterest = totalInterest + towardsInterest; // total int equals previous total int plus whatever is going toward int in the current payment
+    currentBalance = currentBalance - towardsBalance;
+
+    // display row
+
+    table += "<tr>";
+      table += "<td>" + paymentCounter + "</td>";
+      table += "<td>" + round(monthlyPayment,2) + "</td>";
+      table += "<td>" + round(towardsBalance,2) + "</td>";
+      table += "<td>" + round(towardsInterest,2) + "</td>";
+      table += "<td>" + round(totalInterest,2) + "</td>";
+      table += "<td>" + round(currentBalance,2) + "</td>";
+    table += "</tr>";
+
+
+
+    paymentCounter++;
+
   }
+
 
     table += "</table>";
 
